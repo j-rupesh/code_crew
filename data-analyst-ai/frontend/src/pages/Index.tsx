@@ -23,9 +23,10 @@ const Index = () => {
     chartType: 'bar' | 'line' | 'pie';
   } | null>(null);
 
+  const [accountOpen, setAccountOpen] = useState(false); // <-- toggle for avatar
+
   const navigate = useNavigate();
 
-  // Logout handler
   const handleLogout = async () => {
     try {
       await signOut(auth);
@@ -45,7 +46,6 @@ const Index = () => {
 
   const handleQuery = async (question: string) => {
     if (!file) return toast.error('Please upload a file first');
-
     setIsLoading(true);
     setResults(null);
 
@@ -54,24 +54,13 @@ const Index = () => {
     formData.append('question', question);
 
     try {
-      const response = await fetch('http://localhost:5000/api/query', {
-        method: 'POST',
-        body: formData,
-      });
-
+      const response = await fetch('http://localhost:5000/api/query', { method: 'POST', body: formData });
       if (!response.ok) {
         const error = await response.json();
         throw new Error(error.error || 'Failed to analyze data');
       }
-
       const data = await response.json();
-
-      setResults({
-        data: data.data,
-        summary: data.summary,
-        chartType: data.chartType || 'bar',
-      });
-
+      setResults({ data: data.data, summary: data.summary, chartType: data.chartType || 'bar' });
       toast.success('Analysis complete!');
     } catch (error) {
       console.error(error);
@@ -83,12 +72,10 @@ const Index = () => {
 
   const handleExport = () => {
     if (!results) return;
-
     const csv = [
       Object.keys(results.data[0]).join(','),
       ...results.data.map((row) => Object.values(row).join(',')),
     ].join('\n');
-
     const blob = new Blob([csv], { type: 'text/csv' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -96,7 +83,6 @@ const Index = () => {
     a.download = 'analysis-results.csv';
     a.click();
     URL.revokeObjectURL(url);
-
     toast.success('Data exported successfully!');
   };
 
@@ -115,12 +101,62 @@ const Index = () => {
       <CustomCursor />
       <FloatingElements />
 
-      {/* Logout Button */}
+      {/* Account Avatar Dropdown */}
       <div className="absolute top-4 right-4 z-20">
-        <Button onClick={handleLogout} variant="ghost" className="flex items-center space-x-2">
-          <LogOut className="w-5 h-5" />
-          <span>Logout</span>
-        </Button>
+        <div
+          className="h-12 w-12 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg cursor-pointer border-2 border-white/30 dark:border-gray-700/30 shadow-md hover:scale-105 transition-transform"
+          onClick={() => setAccountOpen(!accountOpen)}
+        >
+          {auth.currentUser?.photoURL ? (
+            <img src={auth.currentUser.photoURL} alt="Profile" className="h-full w-full rounded-full" />
+          ) : auth.currentUser?.displayName ? (
+            auth.currentUser.displayName[0].toUpperCase()
+          ) : auth.currentUser?.email ? (
+            auth.currentUser.email[0].toUpperCase()
+          ) : (
+            'U'
+          )}
+        </div>
+
+        {/* Expanded Account Info */}
+        {accountOpen && (
+          <div className="mt-2 w-64 bg-white/30 dark:bg-gray-800/30 backdrop-blur-lg rounded-2xl px-5 py-3 shadow-xl border border-white/20 dark:border-gray-700/30 transition-all">
+            <div className="flex items-center space-x-4 mb-3">
+              {auth.currentUser?.photoURL ? (
+                <img src={auth.currentUser.photoURL} alt="Profile" className="h-12 w-12 rounded-full border-2 border-primary" />
+              ) : (
+                <div className="h-12 w-12 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg">
+                  {auth.currentUser?.displayName
+                    ? auth.currentUser.displayName[0].toUpperCase()
+                    : auth.currentUser?.email
+                    ? auth.currentUser.email[0].toUpperCase()
+                    : 'U'}
+                </div>
+              )}
+              <div className="flex flex-col">
+                <span className="font-semibold text-foreground text-sm">
+                  {auth.currentUser?.displayName
+                    ? auth.currentUser.displayName
+                    : auth.currentUser?.email
+                    ? auth.currentUser.email.split('@')[0]
+                    : 'Unknown User'}
+                </span>
+                <span className="text-xs text-muted-foreground">
+                  {auth.currentUser?.email || 'No email'}
+                </span>
+              </div>
+            </div>
+
+            <Button
+              onClick={handleLogout}
+              variant="ghost"
+              className="flex items-center space-x-1 text-red-500 hover:bg-red-100 dark:hover:bg-red-800 transition-colors rounded-full px-3 py-1 w-full justify-center"
+            >
+              <LogOut className="w-4 h-4" />
+              <span className="text-xs font-medium">Logout</span>
+            </Button>
+          </div>
+        )}
       </div>
 
       {/* Main Content */}

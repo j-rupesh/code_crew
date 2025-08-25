@@ -51,7 +51,7 @@ const QueryInterface = ({ onQuery, isLoading = false }: QueryInterfaceProps) => 
             <Button
               type="submit"
               disabled={isLoading || !question.trim()}
-              className="absolute right-2 top-1/2 -translate-y-1/2 btn-premium"
+               className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground"
             >
               {isLoading ? (
                 <>

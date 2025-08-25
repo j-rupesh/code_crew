@@ -63,7 +63,7 @@ const Login: React.FC = () => {
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
+            className="p-3 border border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
             required
           />
           <input
@@ -71,13 +71,13 @@ const Login: React.FC = () => {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
+            className="p-3 border border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
             required
           />
           <button
             type="submit"
             disabled={loading}
-            className={`p-3 rounded-xl font-semibold text-white transition-all duration-300 ${
+            className={`p-3 rounded-xl font-semibold text-white transition-all duration-600 ${
               loading ? "bg-gray-400 cursor-not-allowed" : "bg-purple-600 hover:bg-purple-700"
             }`}
           >

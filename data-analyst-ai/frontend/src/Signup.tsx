@@ -32,7 +32,7 @@ const Signup: React.FC = () => {
       <CustomCursor />
 
       {/* Animated Blobs */}
-      <div className="absolute w-full h-full top-0 left-0 -z-10">
+      <div className="absolute w-f  ull h-full top-0 left-0 -z-10">
         <div className="absolute w-96 h-96 bg-pink-400 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob top-0 left-10"></div>
         <div className="absolute w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000 top-20 right-0"></div>
         <div className="absolute w-96 h-96 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000 bottom-10 left-20"></div>
@@ -51,7 +51,7 @@ const Signup: React.FC = () => {
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-500 transition"
+            className="p-3 border border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-500 transition"
             required
           />
           <input
@@ -59,7 +59,7 @@ const Signup: React.FC = () => {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-500 transition"
+            className="p-3 border border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-500 transition"
             required
           />
           <input
@@ -67,14 +67,14 @@ const Signup: React.FC = () => {
             placeholder="Confirm Password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
-            className="p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-500 transition"
+            className="p-3 border border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-500 transition"
             required
           />
           <button
             type="submit"
             disabled={loading}
-            className={`p-3 rounded-xl font-semibold text-white transition-all duration-300 ${
-              loading ? "bg-gray-400 cursor-not-allowed" : "bg-pink-600 hover:bg-pink-700"
+            className={`p-3 rounded-xl font-semibold text-white transition-all duration-600 ${
+              loading ? "bg-gray-600 cursor-not-allowed" : "bg-pink-600 hover:bg-pink-700"
             }`}
           >
             {loading ? "Signing up..." : "Sign Up"}
