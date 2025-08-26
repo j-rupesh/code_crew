@@ -11,12 +11,14 @@
 
 Check out my website: [Live Site](https://code-crew-2.onrender.com)
 
-<p float="left">
-  <img src="assets/login.png" width="200" />
-  <img src="assets/create_accou.png" width="200" />
-  <img src="assets/home.png" width="200" />
-  <img src="assets/working.png" width="200" />
-</p>
+<table>
+  <tr>
+    <td><img src="assets/login.png" width="200" /></td>
+    <td><img src="assets/create_accou.png" width="200" /></td>
+    <td><img src="assets/home.png" width="200" /></td>
+    <td><img src="assets/working.png" width="200" /></td>
+  </tr>
+</table>
 
 
 > **AI-Powered Data Analysis at Your Fingertips** 🚀  
