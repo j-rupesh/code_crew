@@ -54,7 +54,7 @@ const Index = () => {
     formData.append('question', question);
 
     try {
-      const response = await fetch('https://srv-d2moudhr0fns73bfb120.onrender.com/api/data', { method: 'POST', body: formData });
+      const response = await fetch('https://code-crew-2.onrender.com', { method: 'POST', body: formData });
       if (!response.ok) {
         const error = await response.json();
         throw new Error(error.error || 'Failed to analyze data');
