@@ -1,103 +1,61 @@
-AI Data Analyst Assistant
-This project is an AI-powered assistant that allows users to ask natural language questions about their datasets. The assistant translates these questions into SQL queries, executes them, and returns the results in an easy-to-understand format.
+# AI Data Analyst Assistant
 
-🚀 Features
-Natural Language Processing: Ask complex questions about your data in plain English.
+[![Website](https://img.shields.io/badge/Website-Live-brightgreen)](https://codecrewai.netlify.app/)  
+[![Python](https://img.shields.io/badge/Python-3.8+-blue)](https://www.python.org/)  
+[![React](https://img.shields.io/badge/React-Vite-blueviolet)](https://reactjs.org/)  
 
-AI-Powered SQL Generation: Automatically converts user questions into precise SQL queries using the Gemini API.
+**Try it live:** [AI Data Analyst Assistant](https://codecrewai.netlify.app/)  
 
-Data Analysis: Executes queries on a given dataset (e.g., a .csv file) to find insights.
+> **AI-Powered Data Analysis at Your Fingertips** 🚀  
+> Ask natural language questions about your datasets, get SQL queries generated automatically, and view actionable insights instantly!
 
-Web Interface: A simple and clean user interface to interact with the AI assistant.
+---
 
-🛠️ Tech Stack
-Backend: Python, Flask
+## 🌟 Key Features
 
-AI Model: Google Gemini
+- **Natural Language Processing (NLP):**  
+  Ask complex questions in plain English without writing SQL.  
 
-Data Handling: Pandas, Pandasql
+- **AI-Powered SQL Generation:**  
+  Leverages Google Gemini API to generate accurate SQL queries automatically.  
 
-Frontend: React (Assumed)
+- **Data Analysis Support:**  
+  Works with `.csv` and `.xlsx` files for immediate insights.  
 
-Environment Management: venv, python-dotenv
+- **Clean Web Interface:**  
+  Responsive and user-friendly React frontend built with Vite.  
 
-⚙️ Setup and Installation
-Follow these steps to get the project running on your local machine.
+- **Instant Results & Visual Feedback:**  
+  Execute queries and get results instantly with summary and optional chart view.
 
-Prerequisites
-Python 3.8+
+---
 
-Node.js and npm (for the frontend)
+## 🛠️ Tech Stack
 
-1. Clone the Repository
+### Backend
+- **Framework:** Python Flask  
+- **Libraries:** Pandas, Pandasql, Flask-CORS, python-dotenv  
+- **AI Model:** Google Gemini (optional)  
+
+### Frontend
+- **Framework:** React (Vite)  
+- **UI:** Responsive and modern interface  
+
+### Environment Management
+- Python virtual environment (`venv`)  
+- `.env` file for configuration (API keys, etc.)
+
+---
+
+## ⚙️ Setup & Installation
+
+### Prerequisites
+- Python 3.8+  
+- Node.js & npm  
+
+---
+
+### 1️⃣ Clone the Repository
+```bash
 git clone <your-repository-url>
 cd data-analyst-ai
-
-2. Backend Setup
-First, navigate to the backend directory and set up the Python environment.
-
-cd backend
-
-Create and activate a virtual environment:
-
-# Create the virtual environment
-python -m venv venv
-
-# Activate on Windows
-.\venv\Scripts\activate
-
-# Activate on macOS/Linux
-# source venv/bin/activate
-
-Install the required libraries:
-
-The project dependencies are listed in requirements.txt.
-
-pip install pandas pandasql google-generativeai python-dotenv flask flask-cors
-
-(Optional but Recommended) Create a requirements.txt file:
-
-If you don't have one, you can generate it for future use:
-
-pip freeze > requirements.txt
-
-Set up environment variables:
-
-Create a file named .env in the backend directory and add your Gemini API key.
-
-# .env
-GEMINI_API_KEY="AIzaSy..."
-
-3. Frontend Setup
-Navigate to the frontend directory (assuming it's named frontend or similar).
-
-# Go back to the root and then into the frontend folder
-cd ../frontend
-
-Install the necessary Node.js packages:
-
-npm install
-
-▶️ Running the Application
-You will need to run two separate terminals for the backend and frontend.
-
-1. Start the Backend Server:
-
-Open a terminal in the backend directory.
-
-Make sure your virtual environment is activated.
-
-Run the Flask application.
-
-# (venv) is active
-python app.py
-
-2. Start the Frontend Application:
-
-Open a second terminal in the frontend directory.
-
-Run the React development server.
-
-npm start
-
-Your application should now be running and accessible in your web browser, typically at http://localhost:3000.
