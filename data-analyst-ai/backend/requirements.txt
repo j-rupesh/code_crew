@@ -1,6 +1,4 @@
 flask
-flask-cors
-pandas
-python-dotenv
-google-generativeai
 gunicorn
+pandas
+pandasql
