@@ -12,18 +12,19 @@
 Check out my website: [Live Site](https://codecrewai.netlify.app/)
 
 
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
 
 <table>
   <tr>
-    <td><img src="assets/login.png" width="200" /></td>
-    <td><img src="assets/create_accou.png" width="200" /></td>
+    <td><img src="assets/login.png" width="400" /></td>
+    <td><img src="assets/create_accou.png" width="400" /></td>
   </tr>
   <tr>
-    <td><img src="assets/home.png" width="200" /></td>
-    <td><img src="assets/working.png" width="200" /></td>
+    <td><img src="assets/home.png" width="400" /></td>
+    <td><img src="assets/working.png" width="400" /></td>
   </tr>
 </table>
-
+</div>
 
 > **AI-Powered Data Analysis at Your Fingertips** 🚀  
 > Ask natural language questions about your datasets, get SQL queries generated automatically, and view actionable insights instantly!
