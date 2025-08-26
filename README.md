@@ -6,6 +6,19 @@
 
 **Try it live:** [AI Data Analyst Assistant](https://codecrewai.netlify.app/)  
 
+
+# Website Preview
+
+Check out my website: [Live Site](https://code-crew-2.onrender.com)
+
+<p float="left">
+  <img src="assets/login.png" width="200" />
+  <img src="assets/create_accou.png" width="200" />
+  <img src="assets/home.png" width="200" />
+  <img src="assets/working.png" width="200" />
+</p>
+
+
 > **AI-Powered Data Analysis at Your Fingertips** 🚀  
 > Ask natural language questions about your datasets, get SQL queries generated automatically, and view actionable insights instantly!
 
