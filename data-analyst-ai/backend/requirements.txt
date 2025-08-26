@@ -3,3 +3,4 @@ gunicorn
 pandas
 pandasql
 flask-cors
+dotenv
