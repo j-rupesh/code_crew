@@ -12,16 +12,12 @@
 Check out my website: [Live Site](https://codecrewai.netlify.app/)
 
 
-<table>
-  <tr>
-    <td><img src="assets/login.png" width="200" /></td>
-    <td><img src="assets/create_accou.png" width="200" /></td>
-  </tr>
-  <tr>
-    <td><img src="assets/home.png" width="200" /></td>
-    <td><img src="assets/working.png" width="200" /></td>
-  </tr>
-</table>
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+  <img src="assets/login.png" width="200" />
+  <img src="assets/create_accou.png" width="200" />
+  <img src="assets/home.png" width="200" />
+  <img src="assets/working.png" width="200" />
+</div>
 
 
 > **AI-Powered Data Analysis at Your Fingertips** 🚀  
